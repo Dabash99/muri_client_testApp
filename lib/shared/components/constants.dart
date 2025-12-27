@@ -1,0 +1,1 @@
+final String kLogo = 'assets/images/muriLogo.png';
