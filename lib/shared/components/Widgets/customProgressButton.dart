@@ -1,30 +1,37 @@
+// هذا الكود يوضع داخل ملف customProgressButton.dart
 import 'package:flutter/material.dart';
+import '../../styles/colors.dart';
 
 class CustomProgressButton extends StatelessWidget {
-  const CustomProgressButton({super.key});
+  final double percentage;
+  final VoidCallback onPressed;
+
+  const CustomProgressButton({
+    super.key,
+    required this.percentage,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
       children: [
-        // الحلقة الخارجية (مؤشر التقدم)
         SizedBox(
           width: 80,
           height: 80,
           child: CircularProgressIndicator(
-            value: 0.35,
-            strokeWidth: 2,
-            backgroundColor: Colors.transparent,
-            valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF2D7FF9)),
+            value: percentage,
+            strokeWidth: 3,
+            backgroundColor: Colors.grey[200],
+            valueColor: const AlwaysStoppedAnimation<Color>(AppColors.primaryBlue),
           ),
         ),
-        //
         Container(
           width: 60,
           height: 60,
           decoration: const BoxDecoration(
-            color: Color(0xFF2D7FF9),
+            color: AppColors.primaryBlue,
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
@@ -36,10 +43,15 @@ class CustomProgressButton extends StatelessWidget {
           ),
           child: IconButton(
             icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
-            onPressed: () {},
+            onPressed: onPressed,
           ),
         ),
       ],
     );
   }
 }
+
+
+
+
+
