@@ -7,7 +7,7 @@ class DioHelper {
   static init() {
     dio = Dio(
       BaseOptions(
-        baseUrl: 'https://sportapi7.p.rapidapi.com/api/v1/',
+        baseUrl: 'https://dev.muri.sa',
         receiveDataWhenStatusError: true,
         headers: {'Content-Type': 'application/json'},
       ),
