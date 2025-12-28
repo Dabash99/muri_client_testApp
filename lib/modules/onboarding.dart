@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:muri_client/shared/components/functions.dart';
 import 'package:muri_client/shared/styles/colors.dart';
 
+import '../shared/components/Widgets/backarrowbox.dart';
 import '../shared/components/Widgets/customProgressButton.dart';
 import '../shared/styles/backgroundClipper.dart';
 import 'login/loginScreen.dart';
@@ -112,23 +113,15 @@ class _OnboardingState extends State<Onboarding> {
 
                       // زر السهم المربع (الرجوع)
                       _currentIndex > 0
-                          ? Container(
-                        width: 40, height: 40,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.white.withOpacity(0.5)),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: IconButton(
-                          padding: EdgeInsets.zero,
-                          icon: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.white),
-                          onPressed: () {
-                            _imagesController.previousPage(
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.easeInOut,
-                            );
-                          },
-                        ),
-                      )
+                          ? BackArrowBox(onPressed: (){
+                        _imagesController.previousPage(
+
+                          duration: const Duration(milliseconds: 300),
+
+                          curve: Curves.easeInOut,
+
+                        );
+                      })
                           : const SizedBox(width: 40),
                     ],
                   ),
@@ -231,3 +224,4 @@ class _OnboardingState extends State<Onboarding> {
     );
   }
 }
+
