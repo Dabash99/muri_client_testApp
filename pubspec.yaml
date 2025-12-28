@@ -65,6 +65,7 @@ flutter:
     - assets/images/onboardingback1.png
     - assets/images/onboardingback2.png
     - assets/images/onboardingback3.png
+    - assets/images/onback.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
