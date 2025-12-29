@@ -6,7 +6,7 @@ class BackgroundClipper extends CustomClipper<Path> {
     var path = Path();
     path.lineTo(0, size.height - 80); // ابدأ من اليسار واترك مسافة من الأسفل
 
-    var firstControlPoint = Offset(size.width / 2, size.height + 20); // نقطة التحكم في المنتصف لأسفل
+    var firstControlPoint = Offset(size.width / 2, size.height + 40); // نقطة التحكم في المنتصف لأسفل
     var firstEndPoint = Offset(size.width, size.height - 80); // نقطة النهاية في اليمين
 
     path.quadraticBezierTo(

@@ -6,6 +6,7 @@ import 'package:muri_client/shared/components/functions.dart';
 
 import '../../shared/components/Widgets/backarrowbox.dart';
 import '../../shared/components/Widgets/custom_textformfield.dart';
+import '../../shared/components/Widgets/text.dart';
 import '../../shared/components/constants.dart';
 import '../../shared/styles/backgroundClipper.dart';
 import '../../shared/styles/colors.dart';
@@ -57,25 +58,9 @@ class Forgotpasswordscreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text(
-                    "استعادة كلمة المرور",
-                    textAlign: TextAlign.right,
-                    style: GoogleFonts.alexandria(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
+                  textBold(label: 'استعادة كلمة المرور',),
                   const SizedBox(height: 8),
-                  Text(
-                    "من فضلك، أدخل بريدك الإلكتروني لاستعادة كلمة المرور",
-                    textAlign: TextAlign.right,
-                    style: GoogleFonts.alexandria(
-                      fontSize: 14,
-                      color: AppColors.textSecondary,
-                      height: 1.5,
-                    ),
-                  ),
+                  textreg(label: 'من فضلك، أدخل بريدك الإلكتروني لاستعادة كلمة المرور'),
                   const SizedBox(height: 30),
                   CustomTextField(
                     hintText: 'ادخل حسابك ',
@@ -132,3 +117,4 @@ class Forgotpasswordscreen extends StatelessWidget {
     );
   }
 }
+

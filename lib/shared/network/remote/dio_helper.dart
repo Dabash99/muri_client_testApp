@@ -7,7 +7,7 @@ class DioHelper {
   static init() {
     dio = Dio(
       BaseOptions(
-        baseUrl: 'https://dev.muri.sa',
+        baseUrl: 'https://dev.muri.sa/',
         receiveDataWhenStatusError: true,
         headers: {'Content-Type': 'application/json'},
       ),
