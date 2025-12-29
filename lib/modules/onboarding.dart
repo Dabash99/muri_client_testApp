@@ -45,17 +45,14 @@ class _OnboardingState extends State<Onboarding> {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          // =========================================================
-          // 1. الطبقة الخلفية: الصور داخل الـ ClipPath (المتحركة)
-          // =========================================================
+
           ClipPath(
             clipper: BackgroundClipper(),
             child: Container(
-              height: MediaQuery.of(context).size.height * 0.65, // 65% من الشاشة
+              height: MediaQuery.of(context).size.height * 0.65,
               width: double.infinity,
-              color: AppColors.primaryBlue, // لون خلفية احتياطي
+              color: AppColors.primaryBlue,
 
-              // هنا وضعنا الـ PageView داخل الـ ClipPath
               child: PageView.builder(
                 controller: _imagesController,
                 itemCount: contents.length,
@@ -63,7 +60,6 @@ class _OnboardingState extends State<Onboarding> {
                   setState(() {
                     _currentIndex = index;
                   });
-                  // أمر لتحريك نصوص الأسفل لتلحق بالصور
                   _textController.animateToPage(
                     index,
                     duration: const Duration(milliseconds: 300),
@@ -73,7 +69,7 @@ class _OnboardingState extends State<Onboarding> {
                 itemBuilder: (context, index) {
                   return Image.asset(
                     contents[index]['image']!,
-                    fit: BoxFit.cover, // مهم جداً: لتغطية المساحة المقوسة بالكامل
+                    fit: BoxFit.cover,
                   );
                 },
               ),
@@ -86,13 +82,11 @@ class _OnboardingState extends State<Onboarding> {
           SafeArea(
             child: Column(
               children: [
-                // --- الهيدر (أزرار التخطي والرجوع) ---
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // زر تخطي
                       _currentIndex != contents.length - 1
                           ? TextButton.icon(
                         onPressed: () {
@@ -111,7 +105,6 @@ class _OnboardingState extends State<Onboarding> {
                       )
                           : const SizedBox(width: 60),
 
-                      // زر السهم المربع (الرجوع)
                       _currentIndex > 0
                           ? BackArrowBox(onPressed: (){
                         _imagesController.previousPage(
@@ -134,7 +127,6 @@ class _OnboardingState extends State<Onboarding> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      // النقاط (Dots)
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: List.generate(

@@ -41,6 +41,7 @@ class _LoginscreenState extends State<Loginscreen> {
                     decoration: const BoxDecoration(
                       color: AppColors.primaryBlue,
                     ),
+                    child: Image.asset('assets/images/onback.png'),
                   ),
                 ),
                 Positioned(
@@ -86,7 +87,8 @@ class _LoginscreenState extends State<Loginscreen> {
 
                   // --- حقل البريد الإلكتروني ---
                   const SizedBox(height: 8),
-                  CustomTextField(label: 'البريد الإلكتروني',
+                  CustomTextField(
+                    label: 'البريد الإلكتروني',
                     hintText: 'برجاء إدخال البريد الإلكتروني',
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
@@ -96,7 +98,8 @@ class _LoginscreenState extends State<Loginscreen> {
 
                   // --- حقل كلمة المرور ---
                   const SizedBox(height: 8),
-                  CustomTextField(label: 'كلمة المرور',
+                  CustomTextField(
+                    label: 'كلمة المرور',
                     hintText: 'برجاء إدخال كلمة المرور',
                     controller: passwordController,
                     obscureText: !isPasswordVisible,
@@ -136,7 +139,7 @@ class _LoginscreenState extends State<Loginscreen> {
                   // --- زر تسجيل الدخول ---
                   SizedBox(
                     height: 55,
-                    child: CustomButton(text: 'تسجيل الدخول', onPressed: () {  },),
+                    child: CustomButton(text: 'تسجيل الدخول', onPressed: () {}),
                   ),
 
                   const SizedBox(height: 25),
@@ -177,5 +180,4 @@ class _LoginscreenState extends State<Loginscreen> {
       ),
     );
   }
-
 }
