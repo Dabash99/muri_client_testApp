@@ -51,7 +51,7 @@ class _OnboardingState extends State<Onboarding> {
             child: Container(
               height: MediaQuery.of(context).size.height * 0.65,
               width: double.infinity,
-              color: AppColors.primaryBlue,
+              color: AppColors.primary500,
 
               child: PageView.builder(
                 controller: _imagesController,
@@ -151,7 +151,7 @@ class _OnboardingState extends State<Onboarding> {
                                     contents[index]['title']!,
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.alexandria(
-                                      color: AppColors.primaryBlue,
+                                      color: AppColors.primary500,
                                       fontSize: 24,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -161,7 +161,7 @@ class _OnboardingState extends State<Onboarding> {
                                     contents[index]['desc']!,
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.alexandria(
-                                      color: AppColors.textSecondary,
+                                      color: AppColors.textColorPrimary,
                                       fontSize: 15,
                                       fontWeight: FontWeight.normal,
                                       height: 1.5,
@@ -210,7 +210,7 @@ class _OnboardingState extends State<Onboarding> {
       width: isActive ? 30 : 10,
       height: 8,
       decoration: BoxDecoration(
-        color: isActive ? AppColors.primaryBlue : Colors.grey[300],
+        color: isActive ? AppColors.primary500 : Colors.grey[300],
         borderRadius: BorderRadius.circular(10),
       ),
     );

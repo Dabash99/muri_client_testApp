@@ -24,14 +24,14 @@ class CustomProgressButton extends StatelessWidget {
             value: percentage,
             strokeWidth: 3,
             backgroundColor: Colors.grey[200],
-            valueColor: const AlwaysStoppedAnimation<Color>(AppColors.primaryBlue),
+            valueColor: const AlwaysStoppedAnimation<Color>(AppColors.primary500),
           ),
         ),
         Container(
           width: 60,
           height: 60,
           decoration: const BoxDecoration(
-            color: AppColors.primaryBlue,
+            color: AppColors.primary500,
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(

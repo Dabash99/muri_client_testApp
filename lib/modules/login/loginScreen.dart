@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:muri_client/shared/components/Widgets/text.dart';
+import 'package:iconsax_plus/iconsax_plus.dart';
+import 'package:muri_client/shared/styles/text.dart';
 import 'package:muri_client/shared/components/constants.dart';
 import 'package:muri_client/shared/components/functions.dart';
 import 'package:muri_client/shared/styles/colors.dart';
 import '../../shared/components/Widgets/customButton.dart';
-import '../../shared/components/Widgets/custom_textformfield.dart' hide AppColors;
+import '../../shared/components/Widgets/custom_textformfield.dart';
 import '../../shared/styles/backgroundClipper.dart';
 import '../forgotpassword/forgotpasswordscreen.dart';
 import '../registerscreen/register_screen.dart';
@@ -21,7 +22,6 @@ class Loginscreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -56,7 +56,7 @@ class Loginscreen extends StatelessWidget {
                             height: 317,
                             width: double.infinity,
                             decoration: const BoxDecoration(
-                              color: AppColors.primaryBlue,
+                              color: AppColors.primary500,
                             ),
                             child: Image.asset('assets/images/onback.png'),
                           ),
@@ -79,9 +79,9 @@ class Loginscreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           const SizedBox(height: 20),
-                          textBold(label: "مرحبًا بك من جديد"),
+                          TextBoldBodyLarge(label: "مرحبًا بك من جديد",color: AppColors.textColorPrimary,),
                           const SizedBox(height: 8),
-                          textreg(label: "سجّل دخولك لحجز مقعدك والاطلاع على جدول تنقلاتك اليومية."),
+                          TextRegularLabel(label: "سجّل دخولك لحجز مقعدك والاطلاع على جدول تنقلاتك اليومية.",color: AppColors.textColorDisable),
 
                           const SizedBox(height: 30),
 
@@ -104,7 +104,10 @@ class Loginscreen extends StatelessWidget {
                               onPressed: () {
                                 cubit.changePasswordVisibility();
                               },
-                              icon: Icon(cubit.suffix),
+                              icon:  Icon(
+                                cubit.isPassword? IconsaxPlusLinear.eye
+                                    : IconsaxPlusLinear.eye,
+                              )
                             ),
                           ),
 
@@ -118,7 +121,7 @@ class Loginscreen extends StatelessWidget {
                               child: Text(
                                 "نسيت كلمة المرور ؟",
                                 style: GoogleFonts.alexandria(
-                                  color: AppColors.textSecondary,
+                                  color: AppColors.textColorSecondary,
                                   fontSize: 12,
                                 ),
                               ),
@@ -157,7 +160,7 @@ class Loginscreen extends StatelessWidget {
                                 child: Text(
                                   "إنشاء حساب",
                                   style: GoogleFonts.alexandria(
-                                    color: AppColors.primaryBlue,
+                                    color: AppColors.primary500,
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -166,7 +169,7 @@ class Loginscreen extends StatelessWidget {
                               Text(
                                 "ليس لديك حساب؟",
                                 style: GoogleFonts.alexandria(
-                                  color: AppColors.textSecondary,
+                                  color: AppColors.textColorDisable,
                                   fontSize: 14,
                                 ),
                               ),

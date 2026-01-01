@@ -9,16 +9,16 @@ class AppTheme {
       useMaterial3: true,
       brightness: Brightness.light,
 
-      primaryColor: AppColors.primaryBlue,
-      scaffoldBackgroundColor: AppColors.background,
+      primaryColor: AppColors.primary500,
+      scaffoldBackgroundColor: AppColors.bg1,
 
       colorScheme: const ColorScheme.light(
-        primary: AppColors.primaryBlue,
-        secondary: AppColors.primaryBlue,
-        surface: AppColors.surface,
-        background: AppColors.background,
+        primary: AppColors.primary500,
+        secondary: AppColors.primary500,
+        surface: AppColors.bg1,
+        background: AppColors.bg1,
         onPrimary: Colors.white,
-        onSurface: AppColors.textPrimary,
+        onSurface: AppColors.textColorPrimary,
       ),
 
       textTheme: GoogleFonts.alexandriaTextTheme().copyWith(
@@ -43,7 +43,7 @@ class AppTheme {
       ),
 
       appBarTheme: const AppBarTheme(
-        backgroundColor: AppColors.primaryBlue,
+        backgroundColor: AppColors.primary500,
         elevation: 0,
         centerTitle: false,
         titleTextStyle: TextStyle(
@@ -57,8 +57,8 @@ class AppTheme {
 
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Colors.white,
-        selectedItemColor: AppColors.primaryBlue,
-        unselectedItemColor: AppColors.textSecondary,
+        selectedItemColor: AppColors.primary500,
+        unselectedItemColor: AppColors.textColorPrimary,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
         elevation: 10,

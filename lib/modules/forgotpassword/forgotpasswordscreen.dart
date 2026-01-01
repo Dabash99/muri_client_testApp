@@ -6,7 +6,7 @@ import 'package:muri_client/shared/components/functions.dart';
 
 import '../../shared/components/Widgets/backarrowbox.dart';
 import '../../shared/components/Widgets/custom_textformfield.dart';
-import '../../shared/components/Widgets/text.dart';
+import '../../shared/styles/text.dart';
 import '../../shared/components/constants.dart';
 import '../../shared/styles/backgroundClipper.dart';
 import '../../shared/styles/colors.dart';
@@ -32,7 +32,7 @@ class Forgotpasswordscreen extends StatelessWidget {
                   height: 317,
                   width: double.infinity,
                   decoration: const BoxDecoration(
-                    color: AppColors.primaryBlue,
+                    color: AppColors.primary500,
                   ),
                 ),
               ),
@@ -58,9 +58,9 @@ class Forgotpasswordscreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  textBold(label: 'استعادة كلمة المرور',),
+                  TextBoldBodyLarge(label: 'استعادة كلمة المرور',color: AppColors.textColorPrimary,),
                   const SizedBox(height: 8),
-                  textreg(label: 'من فضلك، أدخل بريدك الإلكتروني لاستعادة كلمة المرور'),
+                  TextRegularCaption(label: 'من فضلك، أدخل بريدك الإلكتروني لاستعادة كلمة المرور',color: AppColors.textColorSecondary),
                   const SizedBox(height: 30),
                   CustomTextField(
                     hintText: 'ادخل حسابك ',
@@ -94,7 +94,7 @@ class Forgotpasswordscreen extends StatelessWidget {
                       child: Text(
                         "تسجيل الدخول",
                         style: GoogleFonts.alexandria(
-                          color: AppColors.primaryBlue,
+                          color: AppColors.primary500,
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                         ),
@@ -103,7 +103,7 @@ class Forgotpasswordscreen extends StatelessWidget {
                     Text(
                       "تذكرت كلمة المرور؟",
                       style: GoogleFonts.alexandria(
-                        color: AppColors.textSecondary,
+                        color: AppColors.textColorPrimary,
                         fontSize: 14,
                       ),
                     ),

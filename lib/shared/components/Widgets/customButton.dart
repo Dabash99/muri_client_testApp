@@ -25,12 +25,12 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width ?? double.infinity, // لو مبعتش عرض هياخد العرض كامل
+      width: width ?? double.infinity,
       height: height,
       child: ElevatedButton(
         onPressed: isLoading ? null : onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor ?? AppColors.primaryBlue, // لون افتراضي لو مبعتش لون
+          backgroundColor: backgroundColor ?? AppColors.primary500,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
