@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconsax_plus/iconsax_plus.dart';
 import 'package:muri_client/shared/components/functions.dart';
 import 'package:muri_client/shared/styles/colors.dart';
 
 import '../shared/components/Widgets/backarrowbox.dart';
 import '../shared/components/Widgets/customProgressButton.dart';
 import '../shared/styles/backgroundClipper.dart';
-import 'login/loginScreen.dart';
+import 'auth/login/loginScreen.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -87,35 +88,44 @@ class _OnboardingState extends State<Onboarding> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      _currentIndex > 0
+                          ? BackArrowBox(
+                        onPressed: () {
+                          _imagesController.previousPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
+                        },
+                      )
+                          : const SizedBox(width: 40),
+
+
                       _currentIndex != contents.length - 1
-                          ? TextButton.icon(
+                          ?TextButton(
                         onPressed: () {
                           _imagesController.jumpToPage(contents.length - 1);
                         },
-                        icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white, size: 16),
-                        label: Text(
-                          'تخطي',
-                          style: GoogleFonts.alexandria(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
                         style: TextButton.styleFrom(alignment: Alignment.centerLeft),
+
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              'تخطي',
+                              style: GoogleFonts.alexandria(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+
+                            const SizedBox(width: 8), // مسافة صغيرة بينهم
+
+                            const Icon(IconsaxPlusLinear.arrow_left_1, color: Colors.white, size: 20),
+                          ],
+                        ),
                       )
                           : const SizedBox(width: 60),
-
-                      _currentIndex > 0
-                          ? BackArrowBox(onPressed: (){
-                        _imagesController.previousPage(
-
-                          duration: const Duration(milliseconds: 300),
-
-                          curve: Curves.easeInOut,
-
-                        );
-                      })
-                          : const SizedBox(width: 40),
                     ],
                   ),
                 ),

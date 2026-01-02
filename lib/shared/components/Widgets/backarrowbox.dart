@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax_plus/iconsax_plus.dart';
 
 class BackArrowBox extends StatelessWidget {
   final VoidCallback onPressed;
@@ -8,7 +9,7 @@ class BackArrowBox extends StatelessWidget {
   const BackArrowBox({
     super.key,
     required this.onPressed,
-    this.icon = Icons.arrow_forward_ios, // الأيقونة الافتراضية
+    this.icon = IconsaxPlusLinear.arrow_right_3, // الأيقونة الافتراضية
   });
 
   @override
@@ -17,7 +18,7 @@ class BackArrowBox extends StatelessWidget {
       width: 40,
       height: 40,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white.withOpacity(0.5)),
+        border: Border.all(color: Colors.white.withAlpha(50)),
         borderRadius: BorderRadius.circular(12),
       ),
       child: IconButton(

@@ -21,6 +21,7 @@ class DioHelper {
   }) async {
     dio?.options.headers = {
       'Authorization': token,
+      'Accept-Language':'ar',
       'Content-Type': 'application/json',
     };
 
@@ -35,6 +36,7 @@ class DioHelper {
   }) async {
     dio!.options.headers = {
       'Authorization': token,
+      'Accept-Language':'ar',
       'Content-Type': 'application/json',
     };
 

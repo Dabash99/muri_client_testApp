@@ -41,9 +41,9 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TextRegularLabel(label: label, color: AppColors.textColorPrimary),
+        Text(label,style: AppTextStyles.regularLabel(color: AppColors.textColorPrimary,),),
         const SizedBox(height: 8),
         TextFormField(
           controller: controller,
@@ -51,7 +51,6 @@ class CustomTextField extends StatelessWidget {
           keyboardType: keyboardType,
           validator: validator,
           onChanged: onChanged,
-          textAlign: TextAlign.right,
           readOnly: readOnly,
           onTap: onTap,
 

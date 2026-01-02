@@ -76,9 +76,7 @@ class _CustomDatePickerBottomSheetState extends State<CustomDatePickerBottomShee
               child: CupertinoDatePicker(
                 initialDateTime: selectedDate,
                 mode: CupertinoDatePickerMode.date,
-                // عشان يخلي أقصى تاريخ هو اليوم (محدش يختار تاريخ في المستقبل لميلاده)
                 maximumDate: DateTime.now(),
-                // عشان يخلي أقل تاريخ من 100 سنة فاتوا
                 minimumDate: DateTime(1900),
                 onDateTimeChanged: (DateTime newDate) {
                   setState(() {

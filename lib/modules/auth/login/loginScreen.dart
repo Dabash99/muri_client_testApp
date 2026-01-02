@@ -6,17 +6,15 @@ import 'package:muri_client/shared/styles/text.dart';
 import 'package:muri_client/shared/components/constants.dart';
 import 'package:muri_client/shared/components/functions.dart';
 import 'package:muri_client/shared/styles/colors.dart';
-import '../../shared/components/Widgets/customButton.dart';
-import '../../shared/components/Widgets/custom_textformfield.dart';
-import '../../shared/styles/backgroundClipper.dart';
+import '../../../shared/components/Widgets/customButton.dart';
+import '../../../shared/components/Widgets/custom_textformfield.dart';
+import '../../../shared/styles/backgroundClipper.dart';
 import '../forgotpassword/forgotpasswordscreen.dart';
 import '../registerscreen/register_screen.dart';
-// تأكد من استدعاء ملفات الـ Cubit والـ States
 import 'cubit/login_cubit.dart';
 import 'cubit/login_states.dart';
 
 class Loginscreen extends StatelessWidget {
-  // حولناها لـ StatelessWidget لأننا هنستخدم Cubit
   Loginscreen({super.key});
 
   final TextEditingController emailController = TextEditingController();
@@ -79,9 +77,10 @@ class Loginscreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           const SizedBox(height: 20),
-                          TextBoldBodyLarge(label: "مرحبًا بك من جديد",color: AppColors.textColorPrimary,),
+                          Text("مرحبًا بك من جديد",style: AppTextStyles.boldBodyLarge(color:AppColors.textColorPrimary),),
+
                           const SizedBox(height: 8),
-                          TextRegularLabel(label: "سجّل دخولك لحجز مقعدك والاطلاع على جدول تنقلاتك اليومية.",color: AppColors.textColorDisable),
+                          Text("سجّل دخولك لحجز مقعدك والاطلاع على جدول تنقلاتك اليومية.",style: AppTextStyles.regularLabel(color:AppColors.textColorDisable),),
 
                           const SizedBox(height: 30),
 
@@ -100,7 +99,7 @@ class Loginscreen extends StatelessWidget {
                             hintText: 'برجاء إدخال كلمة المرور',
                             controller: passwordController,
                             obscureText: cubit.isPassword,
-                            prefixIcon: IconButton(
+                            suffixIcon: IconButton(
                               onPressed: () {
                                 cubit.changePasswordVisibility();
                               },
@@ -153,6 +152,14 @@ class Loginscreen extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
+
+                              Text(
+                                "ليس لديك حساب؟",
+                                style: GoogleFonts.alexandria(
+                                  color: AppColors.textColorDisable,
+                                  fontSize: 14,
+                                ),
+                              ),
                               TextButton(
                                 onPressed: () {
                                   navigateTo(context, RegisterScreen());
@@ -164,13 +171,6 @@ class Loginscreen extends StatelessWidget {
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                   ),
-                                ),
-                              ),
-                              Text(
-                                "ليس لديك حساب؟",
-                                style: GoogleFonts.alexandria(
-                                  color: AppColors.textColorDisable,
-                                  fontSize: 14,
                                 ),
                               ),
                             ],

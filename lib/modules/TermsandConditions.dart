@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:muri_client/shared/components/Widgets/backarrowbox.dart';
+import 'package:muri_client/shared/styles/colors.dart';
 
 import '../shared/components/Widgets/customAppBar.dart';
 import '../shared/styles/text.dart';
@@ -12,15 +13,16 @@ class Termsandconditions extends StatelessWidget {
     return Scaffold(
       appBar: customAppBar(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            TextMediumCaption(label: 'الشروط والأحكام '),
-            SizedBox(width: 16),
             BackArrowBox(
               onPressed: () {
                 Navigator.pop(context);
               },
             ),
+            SizedBox(width: 16),
+            Text('الشروط والأحكام',style: AppTextStyles.mediumCaption(color: AppColors.bg1),),
+
           ],
         ),
       ),

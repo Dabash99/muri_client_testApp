@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:muri_client/shared/network/remote/dio_helper.dart';
 import 'package:muri_client/shared/styles/themes.dart';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'modules/splashScreen.dart';
 
 void main() async {
@@ -15,6 +15,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: const Locale('ar', 'SA'),
+
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+
+      // 3. حدد اللغات المدعومة
+      supportedLocales: const [
+        Locale('ar', 'SA'), // عربي
+        Locale('en', 'US'), // إنجليزي (لو حبيت تدعمه مستقبلاً)
+      ],
       debugShowCheckedModeBanner: false,
       title: 'Muri Client',
       theme: AppTheme.lightTheme,

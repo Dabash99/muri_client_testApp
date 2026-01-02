@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:muri_client/modules/login/loginScreen.dart';
 import 'package:muri_client/shared/components/Widgets/customButton.dart';
 import 'package:muri_client/shared/components/functions.dart';
-
-import '../../shared/components/Widgets/backarrowbox.dart';
-import '../../shared/components/Widgets/custom_textformfield.dart';
-import '../../shared/styles/text.dart';
-import '../../shared/components/constants.dart';
-import '../../shared/styles/backgroundClipper.dart';
-import '../../shared/styles/colors.dart';
+import '../../../shared/components/Widgets/backarrowbox.dart';
+import '../../../shared/components/Widgets/custom_textformfield.dart';
+import '../../../shared/components/constants.dart';
+import '../../../shared/styles/backgroundClipper.dart';
+import '../../../shared/styles/colors.dart';
+import '../../../shared/styles/text.dart';
+import '../login/loginScreen.dart';
 
 class Forgotpasswordscreen extends StatelessWidget {
   Forgotpasswordscreen({super.key});
@@ -58,9 +57,10 @@ class Forgotpasswordscreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  TextBoldBodyLarge(label: 'استعادة كلمة المرور',color: AppColors.textColorPrimary,),
+                  Text('استعادة كلمة المرور',style: AppTextStyles.boldBodyLarge(color:AppColors.textColorPrimary),),
+
                   const SizedBox(height: 8),
-                  TextRegularCaption(label: 'من فضلك، أدخل بريدك الإلكتروني لاستعادة كلمة المرور',color: AppColors.textColorSecondary),
+                  Text('من فضلك، أدخل بريدك الإلكتروني لاستعادة كلمة المرور',style: AppTextStyles.regularLabel(color:AppColors.textColorDisable),),
                   const SizedBox(height: 30),
                   CustomTextField(
                     hintText: 'ادخل حسابك ',
